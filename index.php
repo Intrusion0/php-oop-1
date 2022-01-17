@@ -43,23 +43,26 @@
         public $movieDirector;
 
         public function __construct($title) {
-            return $this -> title = $title;
+            
+            return $this->title = $title;
         }
 
         public function getFullTitle() {
-            if ($this -> subtitle) {
-                return $this -> title . ": " . $this -> subtitle;
-            } else {
-                return $this -> title;
+
+            if ($this->subtitle) {
+                return $this->title . ": " . $this->subtitle;
             }
+
+            return $this->title;
         }
 
         public function __toString() {
-            if ($this -> movieDirector) {
-                return $this -> getFullTitle() . " | " . $this -> movieDirector;
-            } else {
-                return $this -> getFullTitle() . " | " . "???";
+
+            if ($this->movieDirector) {
+                return $this->getFullTitle() . " | " . $this->movieDirector;
             }
+
+            return $this->getFullTitle() . " | " . "???";
         }
     }
 
@@ -69,11 +72,11 @@
     $f3 = new Film("Peter Pan");
 
     // Film n°2
-    $f2 -> subtitle = "il ritorno di fantozzi";
+    $f2->subtitle = "il ritorno di fantozzi";
 
     // Film n°3
-    $f3 -> subtitle = "il ritorno all'isola che non c'e'";
-    $f3 -> movieDirector = "Robin Budd";
+    $f3->subtitle = "il ritorno all'isola che non c'e'";
+    $f3->movieDirector = "Robin Budd";
 
     echo $f1 . '<br>' . $f2 . '<br>' . $f3;
 ?>
